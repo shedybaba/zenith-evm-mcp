@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "zenith": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "github:shedybaba/zenith-evm-mcp"]
+    }
+  }
+}

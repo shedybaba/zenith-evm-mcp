@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "zenith": {
+      "command": "npx",
+      "args": ["-y", "github:shedybaba/zenith-evm-mcp"],
+      "env": {
+        "ZENITH_KEY_FILE": "~/.config/zenith-evm-mcp/testnet.env",
+        "ZENITH_SPEND_CAP_ZTH": "0.5"
+      }
+    }
+  }
+}
