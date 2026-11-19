@@ -4,8 +4,10 @@ import { SERVER_INSTRUCTIONS } from "./knowledge.js";
 import { registerPrompts } from "./prompts.js";
 import { registerResources } from "./resources.js";
 import { registerChainTools } from "./tools/chain.js";
+import { registerDeveloperTools } from "./tools/developer.js";
 import { registerGatewayTools } from "./tools/gateway.js";
 import { registerNetworkTools } from "./tools/network.js";
+import { registerWriteTools } from "./tools/write.js";
 import { VERSION } from "./version.js";
 
 export function createServer(ctx: ZenithContext = createContext()): McpServer {
@@ -16,6 +18,8 @@ export function createServer(ctx: ZenithContext = createContext()): McpServer {
   registerNetworkTools(server, ctx);
   registerChainTools(server, ctx);
   registerGatewayTools(server, ctx);
+  registerDeveloperTools(server, ctx);
+  registerWriteTools(server, ctx);
   registerResources(server, ctx);
   registerPrompts(server);
   return server;

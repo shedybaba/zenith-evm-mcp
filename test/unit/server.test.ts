@@ -28,6 +28,11 @@ describe("MCP server surface", () => {
         "gateway_convert",
         "gateway_token_eligibility",
         "gateway_activity",
+        "zenith_verify_contract",
+        "zenith_project_config",
+        "zenith_check_compat",
+        "zenith_deploy",
+        "zenith_send",
       ]),
     );
     for (const t of tools) {
