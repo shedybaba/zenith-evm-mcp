@@ -20,6 +20,14 @@ describe("MCP server surface", () => {
         "zenith_read_contract",
         "zenith_get_logs",
         "zenith_decode",
+        "gateway_tokens",
+        "gateway_inbox",
+        "gateway_preflight",
+        "gateway_deposit_status",
+        "gateway_mailbox",
+        "gateway_convert",
+        "gateway_token_eligibility",
+        "gateway_activity",
       ]),
     );
     for (const t of tools) {

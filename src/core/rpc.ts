@@ -95,12 +95,23 @@ export class JsonRpcClient {
   }
 
   private async post<R>(payload: unknown, attempt = 0): Promise<R> {
-    const res = await fetch(this.url, {
-      method: "POST",
-      headers: { "content-type": "application/json", "user-agent": `zenith-evm-mcp/${VERSION}` },
-      body: JSON.stringify(payload),
-      signal: AbortSignal.timeout(30_000),
-    });
+    let res: Response;
+    try {
+      res = await fetch(this.url, {
+        method: "POST",
+        headers: { "content-type": "application/json", "user-agent": `zenith-evm-mcp/${VERSION}` },
+        body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(30_000),
+      });
+    } catch (err) {
+      // Network-level failure (DNS, connect timeout, reset). Re-sending the same request is safe:
+      // reads are idempotent and a re-sent signed transaction has the same hash.
+      if (attempt < 2) {
+        await sleep(1000 * (attempt + 1));
+        return this.post<R>(payload, attempt + 1);
+      }
+      throw new RpcError(`Could not reach the Zenith RPC: ${(err as Error).message}`, -32099);
+    }
     if (res.status === 429 && attempt < 3) {
       const retryAfter = Number(res.headers.get("retry-after"));
       await sleep(

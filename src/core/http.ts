@@ -50,12 +50,27 @@ export async function fetchJson<T = unknown>(
   }
 
   for (let attempt = 0; ; attempt++) {
-    const res = await fetch(url, {
-      method: opts.method ?? (body ? "POST" : "GET"),
-      headers,
-      body,
-      signal: AbortSignal.timeout(opts.timeoutMs ?? 20_000),
-    });
+    let res: Response;
+    try {
+      res = await fetch(url, {
+        method: opts.method ?? (body ? "POST" : "GET"),
+        headers,
+        body,
+        signal: AbortSignal.timeout(opts.timeoutMs ?? 20_000),
+      });
+    } catch (err) {
+      // Network-level failure: retry with a short backoff, then report clearly.
+      if (attempt < retries) {
+        await sleep(1000 * (attempt + 1));
+        continue;
+      }
+      throw new HttpError(
+        `Could not reach ${new URL(url).host}: ${(err as Error).message}`,
+        0,
+        url,
+        null,
+      );
+    }
     const text = await res.text();
     let parsed: unknown = text;
     try {
