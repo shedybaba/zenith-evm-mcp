@@ -1,0 +1,131 @@
+{
+  "registries": [
+    {
+      "admin": "devcc-admin::1220b64aeea8abe20728a6f60d66d6a57212ca9ba2f8d3b7a45bf8dd4de6932eeff2",
+      "baseUrl": "/registry/admins/devcc-admin::1220b64aeea8abe20728a6f60d66d6a57212ca9ba2f8d3b7a45bf8dd4de6932eeff2",
+      "factory": "004d0918e08d1d41b4497cf3b1644f4a0b61bfb57bcda8ced713e840d5d083538eca121220aae62ee0e99260a1c9d65a32e8597fce1623f15f15b5d875e2d5f64ba2ff7b30",
+      "instruments": [
+        {
+          "decimals": 10,
+          "id": "DevCC",
+          "name": "Wrapped CC",
+          "supportedApis": {
+            "splice-api-token-holding-v1": 1,
+            "splice-api-token-metadata-v1": 1,
+            "splice-api-token-transfer-instruction-v1": 1
+          },
+          "symbol": "wCC"
+        },
+        {
+          "decimals": 10,
+          "id": "DevUSD",
+          "name": "Dev USD",
+          "supportedApis": {
+            "splice-api-token-holding-v1": 1,
+            "splice-api-token-metadata-v1": 1,
+            "splice-api-token-transfer-instruction-v1": 1
+          },
+          "symbol": "DUSD"
+        }
+      ],
+      "kind": "dev",
+      "senderPackages": [
+        {
+          "id": "646a945887d8584d4c28991b14c92cdd63292b1c2041541e35f1bbe0304c31e8",
+          "name": "zenith-dev-cc",
+          "version": "0.1.1"
+        }
+      ]
+    },
+    {
+      "admin": "r-635d45b53c561ec7a462ab7a0511468ae5df3443eb2add2b161255bb95b612ad::12204a88976da02f8d43c894dbbbf1d606d82c06d7f73504ec2aa030e88530667974",
+      "baseUrl": "/registry/admins/r-635d45b53c561ec7a462ab7a0511468ae5df3443eb2add2b161255bb95b612ad::12204a88976da02f8d43c894dbbbf1d606d82c06d7f73504ec2aa030e88530667974",
+      "evm": {
+        "native": "ZTH",
+        "sink": "0x50d0eea5a51b1d262b295f9978ed2e2e02a5a5a3",
+        "unit": "1.0 wZTH on Canton is 1 ZTH (10^18 wei); one quantum is 10^8 wei"
+      },
+      "factory": "00309949fcc8188fd14ec3e032734283df4a58e0882bff0157163e5682c6679e0aca121220d01d34d4c042ab7a28edb37b88860bff9315be0c6f413eae2d33146d212e5c15",
+      "instruments": [
+        {
+          "decimals": 10,
+          "id": "erc20:50d0eea5a51b1d262b295f9978ed2e2e02a5a5a3",
+          "name": "Wrapped ZTH",
+          "supportedApis": {
+            "splice-api-token-holding-v1": 1,
+            "splice-api-token-metadata-v1": 1,
+            "splice-api-token-transfer-instruction-v1": 1
+          },
+          "symbol": "wZTH"
+        }
+      ],
+      "kind": "native-zth",
+      "senderPackages": [
+        {
+          "id": "6401e22e4e341c644a4594698b95b39785a9ca5729a8b03018283c4bddd0e62e",
+          "name": "zenith-gateway-parties",
+          "version": "0.1.0"
+        }
+      ]
+    },
+    {
+      "admin": "r-f68556044ce565f33c21fc8ddfa266bb2ff4eb20a3d4113f216033ab94281702::12204a88976da02f8d43c894dbbbf1d606d82c06d7f73504ec2aa030e88530667974",
+      "baseUrl": "/registry/admins/r-f68556044ce565f33c21fc8ddfa266bb2ff4eb20a3d4113f216033ab94281702::12204a88976da02f8d43c894dbbbf1d606d82c06d7f73504ec2aa030e88530667974",
+      "evm": {
+        "erc20Decimals": 18,
+        "token": "0xd238579f5a5c184fe423d68dcf245c2e86ca60e9",
+        "unit": "1.0 on Canton is 10^10 base units of the original, 10^-8 DORIG: 1 DORIG is 100000000 on Canton"
+      },
+      "factory": "00f28dcc981f01262d7483083447ab759bcd18a6fc19000aee504f5c5a9994ed58ca12122057af02673beeb53b3854681a6545c76258582e9a6dde2f20310cff093edb8700",
+      "instruments": [
+        {
+          "decimals": 10,
+          "id": "erc20:d238579f5a5c184fe423d68dcf245c2e86ca60e9",
+          "name": "Dev Original, in units of 10^-8 DORIG",
+          "supportedApis": {
+            "splice-api-token-holding-v1": 1,
+            "splice-api-token-metadata-v1": 1,
+            "splice-api-token-transfer-instruction-v1": 1
+          },
+          "symbol": "DORIGe-8"
+        }
+      ],
+      "kind": "wrapped-erc20",
+      "senderPackages": [
+        {
+          "id": "6401e22e4e341c644a4594698b95b39785a9ca5729a8b03018283c4bddd0e62e",
+          "name": "zenith-gateway-parties",
+          "version": "0.1.0"
+        }
+      ],
+      "token": "0xd238579f5a5c184fe423d68dcf245c2e86ca60e9"
+    }
+  ],
+  "externalRegistries": [
+    {
+      "admin": "ttadmin::1220b64aeea8abe20728a6f60d66d6a57212ca9ba2f8d3b7a45bf8dd4de6932eeff2",
+      "baseUrl": "https://gateway.testnet.zenith.network/test-token",
+      "instruments": [
+        {
+          "class": "accept-required",
+          "credentials": "issuer-granted",
+          "decimals": 10,
+          "id": "TT",
+          "name": "Test Token (test only)",
+          "supportedApis": {
+            "splice-api-token-holding-v1": 1,
+            "splice-api-token-metadata-v1": 1,
+            "splice-api-token-transfer-instruction-v1": 1
+          },
+          "symbol": "TT"
+        }
+      ],
+      "kind": "cip56",
+      "senderPackages": [
+        {
+          "name": "zenith-test-token"
+        }
+      ]
+    }
+  ]
+}

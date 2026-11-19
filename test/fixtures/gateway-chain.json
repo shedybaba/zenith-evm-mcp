@@ -1,0 +1,21 @@
+{
+  "deploymentId": "0x64c9a5594fdc9ca81066357699ac446bee6936b5a7f52c88238ddfbb82ac0979",
+  "evmChainId": 936485,
+  "gatewayAddress": "0x00000000000000000000000000000000000a7e00",
+  "gatewayParty": "zeo::12204a88976da02f8d43c894dbbbf1d606d82c06d7f73504ec2aa030e88530667974",
+  "genesisHash": "0x68958e6b7559f7ad42b3291ee647e5286a1e94d23d0473c4b5cb34ac654d09e2",
+  "namespace": "12204a88976da02f8d43c894dbbbf1d606d82c06d7f73504ec2aa030e88530667974",
+  "native": {
+    "genesisSupplyWei": "11002000000000000000000000",
+    "instrument": {
+      "admin": "r-635d45b53c561ec7a462ab7a0511468ae5df3443eb2add2b161255bb95b612ad::12204a88976da02f8d43c894dbbbf1d606d82c06d7f73504ec2aa030e88530667974",
+      "id": "erc20:50d0eea5a51b1d262b295f9978ed2e2e02a5a5a3"
+    },
+    "mode": "zth",
+    "registrar": "r-635d45b53c561ec7a462ab7a0511468ae5df3443eb2add2b161255bb95b612ad::12204a88976da02f8d43c894dbbbf1d606d82c06d7f73504ec2aa030e88530667974"
+  },
+  "offers": {
+    "minExecuteBeforeSeconds": 180
+  },
+  "sinkAddress": "0x50d0eea5a51b1d262b295f9978ed2e2e02a5a5a3"
+}
